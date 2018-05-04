@@ -14,7 +14,7 @@ function auth(state = [], action) {
       return {
         value: 'guest',
         status: 'logged out',
-      }
+      };
     default:
       return state;
   }
