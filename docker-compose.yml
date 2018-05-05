@@ -1,18 +1,13 @@
-version: "3"
+version: "2"
 services:
-  web:
-    image: bayesimpact/react-base:lastest
-    deploy:
-      replicas: 5
-      restart_policy:
-        condition: on-failure
-      resources:
-        limits:
-          cpus: "0.1"
-          memory: 50M
-    ports:
-      - "80:80"
-    networks:
-      - webnet
-networks:
-  webnet:
+  node:
+    image: "node:8"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/home/node/app
+    expose:
+      - "8081"
+    command: "npm start"

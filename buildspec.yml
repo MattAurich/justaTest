@@ -4,9 +4,8 @@ phases:
   pre_build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image...          
+      - echo Building the Docker image...
       - docker build -t friendlyhello .
-      - docker tag friendlyhello mattaurich/dockertest:v1
   build:
     commands:
       - echo Build completed on `date`
