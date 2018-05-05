@@ -8,8 +8,8 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t <CONTAINER_NAME> .
-      - docker tag <CONTAINER_NAME>:latest <ID>.dkr.ecr.us-west-2.amazonaws.com/<CONTAINER_NAME>:latest
+      - docker build -t friendlyhello .
+      - docker tag friendlyhello mattaurich/dockertest:v1
   post_build:
     commands:
       - echo Build completed on `date`
