@@ -3,15 +3,15 @@ version: 0.1
 phases:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
-  build:
-    commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
       - docker build -t friendlyhello .
       - docker tag friendlyhello mattaurich/dockertest:v1
-  post_build:
+  build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - ls
+      - npm install
+  post_build:
+    commands:
+      - echo hmm
