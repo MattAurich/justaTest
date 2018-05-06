@@ -5,7 +5,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t friendlyhello .
+      - docker build -t my-nodejs-app .
   build:
     commands:
       - echo Build completed on `date`
